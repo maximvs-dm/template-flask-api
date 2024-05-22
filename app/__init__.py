@@ -1,9 +1,7 @@
 import os
 from dotenv import load_dotenv
 from flask import Flask
-from flask_migrate import Migrate
-from flask_sqlalchemy import SQLAlchemy
-from app.controller import bp_games
+from app.controllers.games import bp_games
 
 # Carrega variáveis de ambiente do arquivo `.env`
 load_dotenv()
@@ -17,7 +15,7 @@ def create_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')
 
     # Inicializa as instâncias do SqlAlchemy e do Flask Migrate
-    from app.model import db, migrate
+    from app.models.games import db, migrate
     db.init_app(app)
     migrate.init_app(app, db)
 
