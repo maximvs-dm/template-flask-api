@@ -6,6 +6,16 @@ Template para uma API Flask com SQLAlchemy e flask-migrate
 
 > Os comandos aqui são mostrados para a execução com o terminal do BASH (instalado com a instalação do git)
 
+### Criação do arquivo .env
+
+Crie o arquivo `.env` na raiz do projeto com o seguinte conteúdo
+```txt
+FLASK_APP=app
+FLASK_ENV=Development
+FLASK_DEBUG=True
+SQLALCHEMY_DATABASE_URI=sqlite:///banco.db
+```
+
 ### Criação do ambiente virtual
 
 VENV é um pacote padrão (já vem com a instalação do Python nas versões mais recentes)
@@ -33,7 +43,7 @@ pip install -r requirements.txt
 ### Inicializar/atualizar o banco de dados
 
 ```sh
-flask db init       # rodar em um projeto novo
+flask db init       # rodar em um projeto novo (que ainda não tenha a pasta migrations)
 flask db migrate    # rodar ao baixar o projeto e sempre que houver alterações nas classes
 flask db upgrade    # rodar para persistir as alteraçoes do comando anterior no banco
 ```
