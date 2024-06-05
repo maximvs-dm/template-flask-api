@@ -6,3 +6,4 @@ class Game(db.Model):
     title = db.Column(db.String(255))
     console = db.Column(db.String(255))
     genre = db.Column(db.String(255))
+
