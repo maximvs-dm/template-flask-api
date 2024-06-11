@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from flask import Flask
 from app.controllers.games import bp_games
+from app.controllers.register import bp_register
 
 # Exporta as variáveis de ambiente do arquivo `.env`
 load_dotenv()
@@ -25,5 +26,6 @@ def create_app():
 
     # registra a(s) blueprint(s)
     app.register_blueprint(bp_games)
+    app.register_blueprint(bp_register)
 
     return app

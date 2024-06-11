@@ -4,7 +4,7 @@ from app.services.viacep import get_address
 from ..models.games import Game
 
 
-bp_games = Blueprint('games', __name__)
+bp_games = Blueprint('games', __name__, url_prefix='/jogos')
 
 
 @bp_games.get('/')
